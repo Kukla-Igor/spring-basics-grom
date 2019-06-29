@@ -1,4 +1,4 @@
-package com;
+package com.lesson1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class Test {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/hi", produces = "text/plain")
+    @RequestMapping(method = RequestMethod.GET, value = "", produces = "text/plain")
     public @ResponseBody String test(){
         return "test";
     }
