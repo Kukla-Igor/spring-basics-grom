@@ -1,4 +1,4 @@
-package com.lesson2.homework.task1;
+package com.lesson2.homework;
 
 import java.util.List;
 
@@ -7,8 +7,10 @@ public class Service {
     private String name;
     private List paramsToCall;
 
-    public Service() {
-
+    public Service(long id, String name, List paramsToCall) {
+        this.id = id;
+        this.name = name;
+        this.paramsToCall = paramsToCall;
     }
 
     public long getId() {
@@ -23,5 +25,3 @@ public class Service {
         return paramsToCall;
     }
 }
-
-

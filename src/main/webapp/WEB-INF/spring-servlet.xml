@@ -6,27 +6,45 @@
 
     <context:component-scan base-package="com"/>
 
+
     <bean id="orderService" class="com.lesson2.OrderService">
-<!--        <constructor-arg name=""-->
     </bean>
 
-
-    <bean id="orderDAO" class="com.lesson2.OrderDAO">
-        <!--        <constructor-arg name=""-->
+    <bean id="route" class="com.lesson2.homework.Route">
+        <constructor-arg name="id" value="0"/>
+        <constructor-arg name="steps">
+            <list>
+                <ref bean="step"/>
+                <ref bean="step"/>
+                <ref bean="step"/>
+            </list>
+        </constructor-arg>
     </bean>
 
-    <bean id="Controller" class="com.lesson2.homework.task1.Controller">
-        <!--        <constructor-arg name=""-->
+    <bean id="service" class="com.lesson2.homework.Service">
+        <constructor-arg name="id" value="0"/>
+        <constructor-arg name="name" value="TestName"/>
+        <constructor-arg name="paramsToCall" value="Test"/>
     </bean>
 
-    <bean id="Route" class="com.lesson2.homework.task1.Route">
-                <constructor-arg name="id" value="0"/>
-                <constructor-arg name="steps" value="test"/>
-    </bean>
+    <bean id="step" class="com.lesson2.homework.Step">
+        <constructor-arg name="id" value="0"/>
+        <constructor-arg name="serviceFrom" type="com.lesson2.homework.Service"  ref="service"/>
+        <constructor-arg name="serviceTo" type="com.lesson2.homework.Service" ref="service"/>
+        <constructor-arg name="paramsServiceFrom">
+            <map>
+                <entry key="key1">
+                    <ref bean="service"/>
+                </entry>
+            </map>
+        </constructor-arg>
 
-    <bean id="Service" class="com.lesson2.homework.task1.Service">
-    </bean>
-
-    <bean id="Step" class="com.lesson2.homework.task1.Step">
+        <constructor-arg name="paramsServiceTo">
+            <map>
+                <entry key="key1">
+                    <ref bean="service"/>
+                </entry>
+            </map>
+        </constructor-arg>
     </bean>
 </beans>
