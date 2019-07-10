@@ -1,4 +1,4 @@
-package com.lesson2.homework;
+package com.lesson2.homework.task1;
 
 import java.util.List;
 

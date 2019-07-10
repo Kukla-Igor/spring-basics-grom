@@ -10,7 +10,7 @@
     <bean id="orderService" class="com.lesson2.OrderService">
     </bean>
 
-    <bean id="route" class="com.lesson2.homework.Route">
+    <bean id="route" class="com.lesson2.homework.task1.Route">
         <constructor-arg name="id" value="0"/>
         <constructor-arg name="steps">
             <list>
@@ -21,16 +21,16 @@
         </constructor-arg>
     </bean>
 
-    <bean id="service" class="com.lesson2.homework.Service">
+    <bean id="service" class="com.lesson2.homework.task1.Service">
         <constructor-arg name="id" value="0"/>
         <constructor-arg name="name" value="TestName"/>
         <constructor-arg name="paramsToCall" value="Test"/>
     </bean>
 
-    <bean id="step" class="com.lesson2.homework.Step">
+    <bean id="step" class="com.lesson2.homework.task1.Step">
         <constructor-arg name="id" value="0"/>
-        <constructor-arg name="serviceFrom" type="com.lesson2.homework.Service"  ref="service"/>
-        <constructor-arg name="serviceTo" type="com.lesson2.homework.Service" ref="service"/>
+        <constructor-arg name="serviceFrom" type="com.lesson2.homework.task1.Service" ref="service"/>
+        <constructor-arg name="serviceTo" type="com.lesson2.homework.task1.Service" ref="service"/>
         <constructor-arg name="paramsServiceFrom">
             <map>
                 <entry key="key1">
@@ -46,5 +46,12 @@
                 </entry>
             </map>
         </constructor-arg>
+    </bean>
+
+
+    <bean id="itemService" class="com.lesson2.homework.task2.ItemService">
+    </bean>
+
+    <bean id="itemDAO" class="com.lesson2.homework.task2.ItemDAO">
     </bean>
 </beans>

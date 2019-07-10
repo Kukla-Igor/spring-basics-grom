@@ -1,6 +1,5 @@
 package com.lesson2;
 
-import com.lesson2.homework.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
