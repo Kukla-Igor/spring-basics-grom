@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:component-scan base-package="com"/>
 
@@ -53,5 +54,34 @@
     </bean>
 
     <bean id="itemDAO" class="com.lesson2.homework.task2.ItemDAO">
+    </bean>
+
+    <bean id="file" class="com.lesson3.homework.File">
+        <constructor-arg name="id" value="0"/>
+        <constructor-arg name="name" value="TestName"/>
+        <constructor-arg name="format" value="txt"/>
+        <constructor-arg name="size" value="555"/>
+    </bean>
+
+    <bean id="storage" class="com.lesson3.homework.Storage">
+        <constructor-arg name="id" value="0"/>
+        <constructor-arg name="formatsSupported" value="txt, doc, png"/>
+        <constructor-arg name="storageCountry" value="TestFormat"/>
+        <constructor-arg name="storageMaxSize" value="1000"/>
+    </bean>
+
+    <bean id="serviceToStorage" class="com.lesson3.homework.Service.ServicePtoject">
+    </bean>
+
+    <bean id="fileDao" class="com.lesson3.homework.DAO.FileDAO">
+    </bean>
+
+    <bean id="storageDao" class="com.lesson3.homework.DAO.StorageDAO">
+    </bean>
+
+    <bean id="serviceFile" class="com.lesson3.homework.Service.ServiceFile">
+    </bean>
+
+    <bean id="serviceStorage" class="com.lesson3.homework.Service.ServiceStorage">
     </bean>
 </beans>
