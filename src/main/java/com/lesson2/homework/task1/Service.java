@@ -13,6 +13,10 @@ public class Service {
         this.paramsToCall = paramsToCall;
     }
 
+    public Service() {
+
+    }
+
     public long getId() {
         return id;
     }
@@ -23,5 +27,17 @@ public class Service {
 
     public List getParamsToCall() {
         return paramsToCall;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setParamsToCall(List paramsToCall) {
+        this.paramsToCall = paramsToCall;
     }
 }
