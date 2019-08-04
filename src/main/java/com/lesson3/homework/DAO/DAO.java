@@ -8,10 +8,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.List;
 
+@Repository
 public abstract class DAO <T extends IdEntity> {
 
     abstract Class aClass();

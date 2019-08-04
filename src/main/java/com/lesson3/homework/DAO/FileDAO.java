@@ -2,8 +2,9 @@ package com.lesson3.homework.DAO;
 
 import com.lesson3.homework.File;
 import com.lesson3.homework.exception.InternalServerException;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class FileDAO extends DAO {
 
 

@@ -2,7 +2,9 @@ package com.lesson3.homework.DAO;
 
 import com.lesson3.homework.Storage;
 import com.lesson3.homework.exception.InternalServerException;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class StorageDAO extends DAO {
 
     public Storage save (Storage storage) {

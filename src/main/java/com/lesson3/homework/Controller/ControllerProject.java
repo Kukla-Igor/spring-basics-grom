@@ -1,14 +1,7 @@
 package com.lesson3.homework.Controller;
 
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-
 import com.lesson3.homework.ObjectsWrapper;
 import com.lesson3.homework.Service.ServicePtoject;
 import com.lesson3.homework.Storage;
@@ -18,14 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
-//@WebServlet(urlPatterns = "/")
-@Controller
+
+//@Controller
 public class ControllerProject extends HttpServlet {
     @Autowired
     ServicePtoject service;

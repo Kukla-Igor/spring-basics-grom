@@ -3,7 +3,9 @@ package com.lesson3.homework.Service;
 import com.lesson3.homework.DAO.StorageDAO;
 import com.lesson3.homework.Storage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceStorage {
     @Autowired
     StorageDAO storageDAO;

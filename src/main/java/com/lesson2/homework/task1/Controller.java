@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.annotation.WebServlet;
 
 //@WebServlet (urlPatterns = "/")
-@org.springframework.stereotype.Controller
+//@org.springframework.stereotype.Controller
 public class Controller {
     @Autowired
     private Route route;
