@@ -1,18 +1,5 @@
-package com.lesson5.Homework;
+package com.lesson6;
 
-import com.lesson2.OrderService;
-import com.lesson2.homework.task1.Route;
-import com.lesson2.homework.task1.Service;
-import com.lesson2.homework.task1.Step;
-import com.lesson2.homework.task2.ItemDAO;
-import com.lesson2.homework.task2.ItemService;
-import com.lesson3.homework.DAO.FileDAO;
-import com.lesson3.homework.DAO.StorageDAO;
-import com.lesson3.homework.File;
-import com.lesson3.homework.Service.ServiceFile;
-import com.lesson3.homework.Service.ServicePtoject;
-import com.lesson3.homework.Service.ServiceStorage;
-import com.lesson3.homework.Storage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -24,13 +11,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Configuration
-@EnableTransactionManagement
+@EnableTransactionManagement(proxyTargetClass = true)
 public class AppConfig {
 //    @Bean(name = "file")
 //    public File file() {
@@ -77,10 +60,7 @@ public class AppConfig {
 //        return new ItemService();
 //    }
 
-//    @Bean(name = "itemDAO")
-//    public ItemDAO itemDAO() {
-//        return new ItemDAO();
-//    }
+
 
 //    @Bean(name = "storage")
 //    public Storage storage() {
@@ -114,13 +94,18 @@ public class AppConfig {
 //        return new ServicePtoject();
 //    }
 
+        @Bean(name = "itemDAO")
+    public ItemDAO itemDAO() {
+        return new ItemDAO();
+    }
+
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         dataSource.setUrl("jdbc:oracle:thin:@gromecode-lessons.cbgpstxxjmkw.us-east-2.rds.amazonaws.com:1521:ORCL");
         dataSource.setUsername("main");
-        dataSource.setPassword("*****");
+        dataSource.setPassword("170892Igor");
         return dataSource;
     }
 

@@ -1,17 +1,14 @@
 package com.lesson5.Homework;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import static org.springframework.http.ResponseEntity.ok;
 
-@Repository
-@Transactional
+//@Repository
+//@Transactional
 public class ItemDAO {
 
     @PersistenceContext

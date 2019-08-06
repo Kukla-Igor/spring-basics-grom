@@ -1,14 +1,14 @@
 package com.lesson5;
 
+
 import com.lesson5.Homework.Item;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-@Repository
-@Transactional
+//@Repository
+//@Transactional
 public class DAO {
 
     @PersistenceContext

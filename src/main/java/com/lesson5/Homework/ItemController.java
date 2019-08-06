@@ -1,10 +1,7 @@
 package com.lesson5.Homework;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lesson3.homework.File;
-import com.lesson5.DAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-@Controller
+//@Controller
 public class ItemController extends HttpServlet {
     ItemDAO itemDAO;
 
-    @Autowired
+   // @Autowired
     public ItemController(ItemDAO itemDAO) {
         this.itemDAO = itemDAO;
     }
