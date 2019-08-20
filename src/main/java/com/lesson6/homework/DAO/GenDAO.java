@@ -71,7 +71,7 @@ public abstract class GenDAO<T extends IdEntity> {
     }
 
     public List<String> mostPop(String city) {
-        Query query = entityManager.createNativeQuery("SELECT "+ city +" FROM (SELECT "+ city +", COUNT("+ city +") FROM FLIGHT GROUP BY "+ city +" ORDER BY COUNT("+ city +") DESC) WHERE ROWNUM <= 3");
+        Query query = entityManager.createNativeQuery("SELECT "+ city +" FROM (SELECT "+ city +", COUNT("+ city +") FROM FLIGHT GROUP BY "+ city +" ORDER BY COUNT("+ city +") DESC) WHERE ROWNUM <= 10");
         List<String> cites = query.getResultList();
 
         return cites;

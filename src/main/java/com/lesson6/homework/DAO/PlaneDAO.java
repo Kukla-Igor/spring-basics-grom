@@ -85,7 +85,7 @@ public class PlaneDAO extends GenDAO {
                 query.setParameter(2, myLustDate);
                 query.setParameter(3, flight.getPlane().getId());
                 List<Flight> list = query.getResultList();
-                if (list.size() >= 4) {
+                if (list.size() >= 300) {
                     result.add(flight.getPlane());
                 }
             }
