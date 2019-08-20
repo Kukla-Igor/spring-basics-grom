@@ -7,8 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "ITEM")
 public class Item {
     @JsonProperty("id")
     private long id;

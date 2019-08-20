@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Service
 public class FlightService {
@@ -32,4 +33,12 @@ public class FlightService {
     public ResponseEntity<String> doDelete(HttpServletRequest req) {
         return flightDAO.deleteFlight(req);
     }
+
+    public List<Flight> flightsByDate(HttpServletRequest req){
+        return flightDAO.flightsByDate(req);
+    }
+
+    public List<String> mostPopularTo(){return flightDAO.mostPopularTo();}
+
+    public List<String> mostPopularFrom(){return flightDAO.mostPopularFrom();}
 }

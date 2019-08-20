@@ -1,6 +1,5 @@
 package com.lesson6.homework.DAO;
 
-import com.lesson6.homework.model.Flight;
 import com.lesson6.homework.model.Passenger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
@@ -16,8 +15,8 @@ public class PassengerDAO extends GenDAO {
     }
 
     @Transactional
-    public Flight findPassengerById(HttpServletRequest req){
-        return (Flight) findById(req);
+    public Passenger findPassengerById(HttpServletRequest req){
+        return (Passenger) findById(req);
     }
 
     @Transactional
@@ -29,6 +28,8 @@ public class PassengerDAO extends GenDAO {
     public ResponseEntity<String> deletePassenger(HttpServletRequest req){
         return delete(req);
     }
+
+
 
     @Override
     Class aClass() {

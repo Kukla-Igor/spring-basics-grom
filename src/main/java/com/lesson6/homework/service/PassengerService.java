@@ -1,8 +1,7 @@
 package com.lesson6.homework.service;
 
-import com.lesson6.homework.DAO.FlightDAO;
 import com.lesson6.homework.DAO.PassengerDAO;
-import com.lesson6.homework.model.Flight;
+import com.lesson6.homework.model.Passenger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,7 @@ public class PassengerService {
         return passengerDAO.savePassenger(req);
     }
 
-    public Flight doGet(HttpServletRequest req) {
+    public Passenger doGet(HttpServletRequest req) {
         return passengerDAO.findPassengerById(req);
     }
 

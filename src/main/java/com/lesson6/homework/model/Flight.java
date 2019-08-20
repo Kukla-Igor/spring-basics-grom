@@ -101,8 +101,6 @@ public class Flight extends IdEntity {
     public String toString() {
         return "Flight{" +
                 "id=" + id +
-                ", plane=" + plane +
-                ", passenger=" + passenger +
                 ", dateFlight=" + dateFlight +
                 ", cityFrom='" + cityFrom + '\'' +
                 ", cityTo='" + cityTo + '\'' +

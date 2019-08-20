@@ -105,7 +105,7 @@ public class AppConfig {
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         dataSource.setUrl("jdbc:oracle:thin:@gromecode-lessons.cbgpstxxjmkw.us-east-2.rds.amazonaws.com:1521:ORCL");
         dataSource.setUsername("main");
-        dataSource.setPassword("170892Igor");
+        dataSource.setPassword("******");
         return dataSource;
     }
 

@@ -1,5 +1,6 @@
 package com.lesson6.homework.controlller;
 
+import com.lesson6.homework.model.Flight;
 import com.lesson6.homework.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 public class ControllerFlight extends HttpServlet {
@@ -45,5 +47,19 @@ public class ControllerFlight extends HttpServlet {
         System.out.println(flightService.doDelete(req));
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "flightsByDate", produces = "text/plain")
+    public @ResponseBody
+    List<Flight> flightsByDate (HttpServletRequest req){
+        return flightService.flightsByDate(req);
+        }
 
+    @RequestMapping(method = RequestMethod.GET, value = "mostPopularTo", produces = "text/plain")
+    public @ResponseBody List<String> mostPopularTo(){return flightService.mostPopularTo();}
+
+    @RequestMapping(method = RequestMethod.GET, value = "mostPopularFrom", produces = "text/plain")
+    public @ResponseBody List<String> mostPopularFrom(){
+        List<String> list = flightService.mostPopularFrom();
+        System.out.println(list);
+        return list;
+    }
 }

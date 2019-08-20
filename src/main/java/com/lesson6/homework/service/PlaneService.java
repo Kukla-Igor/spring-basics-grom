@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Service
 public class PlaneService {
@@ -31,5 +32,13 @@ public class PlaneService {
 
     public ResponseEntity<String> doDelete(HttpServletRequest req) {
         return planeDAO.deletePlane(req);
+    }
+
+    public List<Plane> oldPlanes(){
+        return planeDAO.oldPlanes();
+    }
+
+    public List<Plane> regularPlanes(HttpServletRequest req){
+        return planeDAO.regularPlanes(req);
     }
 }

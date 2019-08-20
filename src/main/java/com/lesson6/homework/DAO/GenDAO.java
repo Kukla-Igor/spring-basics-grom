@@ -7,17 +7,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 
 
 @Repository
 public abstract class GenDAO<T extends IdEntity> {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    public EntityManager entityManager;
     abstract Class aClass();
 
 
@@ -60,11 +62,19 @@ public abstract class GenDAO<T extends IdEntity> {
 
         try {
             T t = findById(req);
+            System.out.println(t);
             entityManager.remove(t);
             return new ResponseEntity<>("ok", HttpStatus.OK);
         } catch (Exception e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
+    }
+
+    public List<String> mostPop(String city) {
+        Query query = entityManager.createNativeQuery("SELECT "+ city +" FROM (SELECT "+ city +", COUNT("+ city +") FROM FLIGHT GROUP BY "+ city +" ORDER BY COUNT("+ city +") DESC) WHERE ROWNUM <= 3");
+        List<String> cites = query.getResultList();
+
+        return cites;
     }
 
 
